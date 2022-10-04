@@ -1,16 +1,14 @@
 package com.demoQA.page;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoQA.page.components.CalendarComponent;
-import com.demoQA.page.components.ResultsModal;
-import com.demoQA.page.components.SelectListComponent;
-import com.demoQA.page.components.UploadFileComponent;
+import com.demoQA.page.components.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormPage {
+    private TextFieldComponent textFieldComponent = new TextFieldComponent();
     private CalendarComponent calendarComponent = new CalendarComponent();
     private SelectListComponent selectListComponent = new SelectListComponent();
     private UploadFileComponent uploadFileComponent = new UploadFileComponent();
@@ -44,11 +42,7 @@ public class PracticeFormPage {
         return this;
         }
     public PracticeFormPage setTextField(SelenideElement textFieldSelector , String value){
-        textFieldSelector.setValue(value);
-        return this;
-    }
-    public PracticeFormPage clearTextField(SelenideElement textFieldSelector , String value){
-        textFieldSelector.clear();
+        textFieldComponent.setText(textFieldSelector , value);
         return this;
     }
     public PracticeFormPage setSubjectText(SelenideElement subjectTextSelector , String value){
