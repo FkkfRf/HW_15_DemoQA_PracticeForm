@@ -8,8 +8,8 @@ import java.util.Locale;
 import static com.demoQA.utils.GenerateRandomDataUtils.*;
 
 public class TestData {
-    private static Faker fakerRu = new Faker(new Locale("ru"));
-    private static Faker faker = new Faker();
+    private static final Faker fakerRu = new Faker(new Locale("ru"));
+    private static final Faker faker = new Faker();
    private static final String[] subjectArr = new String[] {"Maths" , "Accounting",
             "Arts" , "Social Studies" ,
             "Biology" , "Physics" ,
@@ -20,7 +20,7 @@ public class TestData {
   private static final String[] stateArr = new String[] {"NCR" , "Uttar Pradesh" , "Haryana" , "Rajasthan" };
    private static final String[] cityArr = new String[] {"Delhi" , "Agra", "Karnal", "Jaipur" };
    private static final int arr = (int) (Math.random() * 4 );
-   private static LocalDate randomD = randomBirthday();
+   private static final LocalDate randomD = randomBirthday();
 
    public static String firstName = fakerRu.name().firstName(),
             lastName = fakerRu.name().lastName(),
